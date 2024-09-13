@@ -77,7 +77,7 @@ def wb_whiteworld(im, pattern):
         red_val = tgt_grid[1,0]
         green_val = (tgt_grid[0,0] + tgt_grid[1,1]) / 2
         blue_val = tgt_grid[0,1]
-        # Enforce gray world assumption
+        # Enforce white world assumption
         im[::2,1::2] = im[::2,1::2] / blue_val
         im[::2,::2] = im[::2,::2] / green_val
         im[1::2,1::2] = im[1::2,1::2] / green_val
@@ -99,7 +99,7 @@ def wb_rescale(im, pattern, r_scale, g_scale, b_scale):
     """
 
     if pattern=='grbg':
-        # Enforce white world assumption
+        # Rescale
         im[::2,1::2] = im[::2,1::2] * r_scale
         im[::2,::2] = im[::2,::2] * g_scale
         im[1::2,1::2] = im[1::2,1::2] * g_scale
@@ -108,7 +108,7 @@ def wb_rescale(im, pattern, r_scale, g_scale, b_scale):
         im = im / np.max(im)
 
     elif pattern=='gbrg':
-        # Enforce gray world assumption
+        # Rescale
         im[::2,1::2] = im[::2,1::2] * b_scale
         im[::2,::2] = im[::2,::2] * g_scale
         im[1::2,1::2] = im[1::2,1::2] * g_scale
