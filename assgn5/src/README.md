@@ -1,0 +1,1 @@
+This directory contains all the code for assignment 5. main_p1.py is for part 1 of the assignment and main_p2.py is for part 2 of the assignment. All the required functions are implemented within utils.py.
